@@ -26,8 +26,3 @@ while True:
         print("Enter a valid number")
 
 print("final list: ", list)
-
-
-
-
-    
