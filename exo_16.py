@@ -1,5 +1,4 @@
 list = [1,2,3,4,5,6,7,8,9,10]
-
 while True:
     try:
         index = int(input("Enter the index or enter -1 to stop: "))
