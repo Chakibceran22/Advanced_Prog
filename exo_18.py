@@ -1,6 +1,7 @@
-numbers = [1,2,3,4,5]
+
+numbers = []
 def print_menu() :
-    print("Menu: \n 1.Append \n 2.Insert \n 3.Pop \n 4.Remove \n 5.Quit")
+    print("Menu: \n 1.Append \n 2.Insert \n 3.Pop \n 4.Remove \n 5.Sort \n 6.Reverse \n 7.save it to a file  \n 8.Quit")
 
 def append_element():
     while True:
@@ -63,13 +64,68 @@ def remove_element():
         except ValueError:
             print("Invalid input. Please enter a number for the input.")
             continue
+def sort_list():
+    numbers.sort()
+    print("Updated Numbers List: ", numbers)
+
+
+
+def reverse_list():
+    numbers.reverse()
+    print("Updated Numbers List: ", numbers)
+
+def save_list_to_file():
+    with open("list.txt","w") as file:
+        for number in numbers:
+            file.write(str(number) + " ")
+        print("List saved to file")
+
+
+#this is for the bonus
+while True:
+    print("choose an option to load a list from a file or create a new list")
+    try:
+        user_list_choice = int(input("1. Load a list from a file 2. Create a new list: "))
+        
+        if user_list_choice == 2:
+            while True:
+                try:
+                    user_input_number = int(input("Enter a number to the list if you wanna stop enter -1: "))
+                    if user_input_number == -1:
+                        break
+                    numbers.append(user_input_number)
+                    print("Updated Numbers List: ", numbers)
+                    
+                except ValueError:
+                    print("Invalid input. Please enter a number for the input.")
+                    continue
+            break    
+        elif user_list_choice == 1:
+                
+                try:
+                    with open("list.txt","r") as file:
+                        lines = file.read().splitlines()
+                        numbers = [int(num) for line in lines for num in line.split()] #this takes the input from the list.txt file
+                        break
+                except Exception as e:
+                    print(e)
+                    continue
+            
+        else:
+            print("enter a choice 1 or 2")
+
+    except ValueError:
+        print("Invalid input. Please enter a number for the choice.")
+        continue
+
 
 print("Numbers List:", numbers)
+
 while True:
     try:
         print_menu()
         user_choice = int(input("choose an option:"))
-        if user_choice == 5:
+        if user_choice == 8:
             print("thank you for using the app")
             break
         elif user_choice == 1:
@@ -80,8 +136,14 @@ while True:
             pop_element()
         elif user_choice == 4:
             remove_element()
+        elif user_choice == 5:
+            sort_list()
+        elif user_choice == 6:
+            reverse_list()
+        elif user_choice == 7:
+            save_list_to_file()
         else:
-            print("Invalid input. Please enter a number between 1 and 5.")
+            print("Invalid input. Please enter a number between 1 and 7.")
             continue
     except ValueError:
         print("Invalid input. Please enter a number for the choicce.")
