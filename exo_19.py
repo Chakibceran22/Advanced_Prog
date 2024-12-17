@@ -1,10 +1,13 @@
 unique_words = set()
+list_of_duplicates = []
 
 while True:
-    inputed_word = input("Enter a word: ")
-    if inputed_word in unique_words:
-        print(f"you entered {len(unique_words)} unique words ")
+    inputed_word = input("Enter a word to stop input #: ") #this is the exo mixed with the bonus
+    if inputed_word == "#":
+        print(f"you entered {len(unique_words)} unique words and {len(list_of_duplicates)} not unqiue")
         break
+    if inputed_word in unique_words:
+        list_of_duplicates.append(inputed_word)
     else:
         unique_words.add(inputed_word.replace(" ","").lower())#the lower ethode make the program case insensitive
         print(sorted(unique_words))#printed as a lst because sets have no order
