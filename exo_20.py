@@ -12,6 +12,7 @@ def calculate_mean(user_list):
     
     mean = sum_list / len(user_list)
     return mean
+
 while True:
     try:
         user_inputed_number = int(input("Enter a number or 0 to break:  "))
