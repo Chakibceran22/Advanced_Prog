@@ -61,10 +61,13 @@ while True:
     except ValueError:
         print("Please enter a valid number")
 
+list_statistics = {
+    "length": length(list),
+    "mean": mean(list),
+    "range": range_of_list(list),
+    "median": median(list)
+}
 print("the list is: ",list)
-print("the length of the list is: ",length(list))
-print("the mean of the list is: ",mean(list))
-print("the range of list of the list is: ",range_of_list(list))
-print("the median of the list is: ",median(list))
+print("the statistics of the list are: ",list_statistics)
     
 
