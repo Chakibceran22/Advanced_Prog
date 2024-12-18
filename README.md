@@ -724,11 +724,11 @@ print(anagram("listen","silent"))
 # How to Run
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Chakibceran22/Advanced_Prog.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd <repository-directory>
+   cd Advanced_Prog
    ```
 3. Run the file:
    ```bash
