@@ -9,7 +9,7 @@ while(True):
 
     except Exception as e:#this blcok is for handleing errors if the string inputed is not a number 
         print("Please enter a valid year.\n")
-        continue;
+        continue
 
     
     

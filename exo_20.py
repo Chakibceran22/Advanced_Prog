@@ -1,4 +1,6 @@
 user_list = []
+
+
 def calculate_Median(user_list):
     list_length = len(user_list)
     if list_length % 2 == 0:
